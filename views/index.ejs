@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>SHA1 Encrypt</title>
+</head>
+<body>
+    <h1>New Login</h1>
+    <form action="/newUser" method="post">
+        <label for="newLogin">New Login</label><br>
+            <input type="text" name="newLogin" required><br><br>
+        <label for="newEmail">New E-mail</label><br>
+            <input type="email" name="newEmail" required><br><br>
+        <label for="newPassword">New Password</label><br>
+            <input type="password" name="newPassword" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <table>
+        <tr>
+          <th>Usuario</th>
+          <th>E-mail</th>
+          <th>Senha</th>
+        </tr>
+        <% UsersVar.forEach((Users) => { %>
+            <tr>
+                <td><%= Users.loginUser %></td>
+                <td><%= Users.emailUser %></td>
+                <td><%= Users.passwordUser %></td>
+            </tr>
+        <% }) %>
+      </table>
+</body>
+</html>
